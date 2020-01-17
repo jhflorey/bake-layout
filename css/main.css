@@ -11,12 +11,16 @@ html{
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .header{
   background-color: #4e2a84;
   color: white;
   padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
 }
 
 .header__content{
@@ -215,4 +219,186 @@ html{
 
 .service__item:hover i{
   color: #ff0e83;
+}
+
+.gallery h1{
+  font-size: 50px;
+  margin-top: 50px 0;
+  text-align: center;
+}
+.gallery__content{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px;
+  width: 98%;
+  margin: 0 auto;
+}
+.gallery__item.item1{
+  grid-column: 1/3;
+}
+.gallery__item.item6{
+  grid-column: 3/5;
+}
+.gallery img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.gallery__item{
+  position: relative;
+}
+
+.gallery__detail{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.gallery__detail p:first-child{
+  color: white;
+  font-size: 25px;
+  text-align: right;
+  margin-top: 40px;
+  transition: margin-top 0.5s;
+}
+.gallery__detail p:first-child span{
+  font-weight: 600;
+}
+
+.gallery__detail .line{
+  background-color: white;
+  width: 100%;
+  height: 3px;
+  margin-top: 30px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.gallery__item:hover .gallery__detail p:first-child{
+  margin-top: 0px;
+}
+
+.gallery__item:hover .gallery__detail .line{
+  opacity: 1;
+  visibility: visible;
+  margin-top: 10px;
+}
+
+.gallery__detail p:last-child{
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  opacity: 0;
+  visibility: hidden;
+  color: white;
+  transition: all 0.5s;
+}
+
+.gallery__item:hover .gallery__detail p:last-child{
+  bottom: 20px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.team{
+  background-color: #4e2a84;
+  padding: 40px 0;
+}
+.team h1{
+  color: white;
+  text-align: center;
+  font-size: 50px;
+  margin: 30px 0;
+}
+
+.team__content{
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.team img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.team__item{
+  position: relative;
+}
+
+.team-name{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background-color: #ff0e83;
+  color: white;
+  width: 100%;
+  padding: 30px;
+}
+
+.team-name p{
+  font-size: 20px;
+}
+
+.team-detail{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.team-detail h3{
+  color: #ff0e83;
+  margin-bottom: 10px;
+}
+
+.team-detail p:nth-child(2){
+  color: white;
+  margin-bottom: 10px;
+}
+
+.team-detail p:nth-child(3){
+  color: white;
+  margin-bottom: 10px;
+  line-height: 30px;
+}
+
+.team-social{
+  display: flex;
+  color: white;
+}
+
+.social-item{
+  width: 45px;
+  height: 45px;
+  border: 1px solid white;
+  margin-right: 10px;
+  text-align: center;
+  line-height: 45px;
+}
+
+.team__item:hover .team-name{
+  opacity: 0;
+  visibility: hidden;
+}
+
+.team__item:hover .team-detail{
+  opacity: 1;
+  visibility: visible;
 }
